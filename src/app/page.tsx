@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import './main.css'
 import {AiOutlinePlus} from 'react-icons/ai'
-import Todo from '@/todo'
+import Todo from './todo'
 
 export default function Home() {
 
