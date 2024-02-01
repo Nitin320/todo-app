@@ -5,17 +5,16 @@
 }
 
 .main{
+    background-color: black;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 .left{
-    position: fixed;
     padding: 5vh;
     width: 40vw;
-    left: 0;
     height: 100vh;
     background-color: #C970F4;
     display: flex;
@@ -60,23 +59,13 @@
     justify-content: flex-start;
     align-items: center;
     width: 60vw;
-    min-height: 100vh;
-    background: #ED65C6;
-    color: white;
-}
-
-.complete{
-    padding: 2.5vh;
-    background-color: #F6A6E2;
-    border-radius: 20px;
-    font-size: 1.1rem;
-    cursor: pointer;
+    height: 100vh;
+    background-color: #ED65C6;
 }
 
 .todo-main{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     background-color: #DA9FF0;
     width: 50vw;
     padding: 5vh;
