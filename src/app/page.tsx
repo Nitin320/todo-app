@@ -4,7 +4,7 @@ import Image from "next/image";
 import './index.css'
 import pic from "./pics/pic.png"
 import { todo } from "node:test";
-import { orderBy, addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc } from "firebase/firestore";
+import { orderBy, addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc, Timestamp } from "firebase/firestore";
 import {db} from "./firebase.js";
 import firebase from "firebase/compat/app";
 
@@ -36,7 +36,7 @@ export default function Home() {
     if(input != ''){
       await addDoc(collection(db, 'todos'), {
         text: input,
-        timestamp: firebase.firestore.Timestamp.now().toDate().toString()
+        timestamp: Timestamp.now().toDate().toString()
       })
       setInput('')
       return
