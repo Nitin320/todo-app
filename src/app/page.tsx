@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import './index.css'
-import pic2 from "./pics/pic2.png"
+import pic from "./pics/pic.png"
 import { todo } from "node:test";
 import { orderBy, addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc } from "firebase/firestore";
 import {db} from "./firebase.js";
@@ -53,7 +53,7 @@ export default function Home() {
     <main>
       <div className="main">
         <div className="left">
-          <Image src={pic2} alt="" className="left-main-img" height={250} width={300} />
+          <Image src={pic} alt="" className="left-main-img" height={250} width={300} />
           <h1 className="head">Todo App</h1>
           <input value={input} onChange={(e) => setInput(e.target.value)} className="task" type="text" name="" id="" placeholder="What's on your mind ? "/>
           <button onClick={createTodo} className="submit">Submit</button>
