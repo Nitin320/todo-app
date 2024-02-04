@@ -4,13 +4,14 @@ import Image from "next/image";
 import './index.css';
 import pic from "./pics/main-pic.png";
 import { orderBy, addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc, Timestamp } from "firebase/firestore";
-// Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
+// https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
   apiKey: "AIzaSyDQcJvIgidYB51hRJafqBOpbdIJlnejVwk",
   authDomain: "todo-app-134e0.firebaseapp.com",
