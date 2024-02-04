@@ -4,7 +4,7 @@ import Image from "next/image";
 import './index.css';
 import pic from "./pics/main-pic.png";
 import { orderBy, addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc, Timestamp } from "firebase/firestore";
-import {db} from "./firebase.js";
+import {db} from "./firebase";
 
 export default function Home() {
 
