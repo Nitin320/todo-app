@@ -46,7 +46,6 @@ export default function Home() {
     await deleteDoc(doc(db, 'todos', id))
   }
 
-
   return (
     <main>
       <div className="main">
