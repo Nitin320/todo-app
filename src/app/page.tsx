@@ -1,12 +1,10 @@
 "use client"
 import React, { useState } from "react";
 import Image from "next/image";
-import './index.css'
-import pic from "./pics/pic.png"
-import { todo } from "node:test";
+import './index.css';
+import pic from "./pics/main-pic.png";
 import { orderBy, addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc, Timestamp } from "firebase/firestore";
 import {db} from "./firebase.js";
-import firebase from "firebase/compat/app";
 
 export default function Home() {
 
