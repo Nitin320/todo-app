@@ -41,7 +41,6 @@ export default function Home() {
     }
   }
 
-
   const deleteTodo = async (id: any) => {
     await deleteDoc(doc(db, 'todos', id))
   }
