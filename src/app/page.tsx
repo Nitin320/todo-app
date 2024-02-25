@@ -1,12 +1,11 @@
 "use client"
 import React, { useState } from "react";
-import Image from "next/image";
-import './index.css';
-import pic from "./pics/main-pic.png";
 import { orderBy, addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc, Timestamp } from "firebase/firestore";
-
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import {StarsCanvas} from './star';
+import './main.css';
+
 // TODO: Add SDKs for Firebase products that you want to use
 
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -66,20 +65,18 @@ export default function Home() {
   }
 
   return (
-    <main>
-      <div className="main">
-        <div className="left">
-          <Image src={pic} alt="" className="left-main-img"/>
-          <h1 className="head">Todo App</h1>
-          <input value={input} onChange={(e) => setInput(e.target.value)} className="task" type="text" name="" id="" placeholder="What's on your mind ? "/>
-          <button onClick={createTodo} className="submit">Submit</button>
+    <main className="min-h-[100vh] min-w-[100vw] h-[100%] w-[100%]">
+      <StarsCanvas/>
+      <div className="bg-black min-h-[100vh] min-w-[100vw] h-[100%] w-[100%] pb-4 flex flex-col content-center items-center space-y-11 text-[white]">
+        <h1 className="z-[2] text-[3rem] font-bold mt-11">Todo App</h1>
+        <div className="z-[2] flex flex-row space-x-4">
+          <input value={input} onChange={(e) => setInput(e.target.value)} className="z-[2] p-3 border-[2px] rounded-[15px] bg-[#080F0D]" type="text" name="" id="" placeholder="What's on your mind ? "/>
+          <button onClick={createTodo} className="z-[2] p-3 px-6 rounded-[10px] bg-[#40BDB2] opacity-[0.5] duration-500 hover:opacity-[1]">Submit</button>
         </div>
 
-        <div className="right">
-          {todos.map((todo, index) => (
-            <Todo key={index} stuff={todo} toggleComplete={toggleComplete} deleteTodo={deleteTodo}/>
-          ))}
-        </div>
+        {todos.map((todo, index) => (
+          <Todo key={index} stuff={todo} toggleComplete={toggleComplete} deleteTodo={deleteTodo}/>
+        ))}
       </div>
     </main>
   );
@@ -87,9 +84,9 @@ export default function Home() {
 
 function Todo({stuff, toggleComplete, deleteTodo}: {stuff: any, toggleComplete: any, deleteTodo: any}) {
   return(
-    <div className="todo-main">
-      <p>{stuff.text}</p>
-      <p onClick={() => deleteTodo(stuff.id)} className="complete">Done !</p>
+    <div className="hover:shadow-[0_0px_20px_#40BDB2] z-[4] text-xl w-[60vw] p-6 border-[2px] border-[#40BDB2] rounded-[10px] duration-700 flex flex-row justify-between items-center max-sm:w-[80vw]">
+      <p className="mr-[2rem] break-all">{stuff.text}</p>
+      <p onClick={() => deleteTodo(stuff.id)} className=" p-2 px-5 text-nowrap border-[#40BDB2] duration-[800ms] cursor-pointer border-[1px] rounded-[10px] hover:bg-[#40BDB2] hover:shadow-[0_5px_50px_#40BDB2]">Done !</p>
     </div>
   );
 }
