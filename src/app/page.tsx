@@ -69,7 +69,7 @@ export default function Home() {
       <StarsCanvas/>
       <div className="bg-black min-h-[100vh] min-w-[100vw] h-[100%] w-[100%] pb-4 flex flex-col justify-center items-center space-y-11 text-[white]">
         <h1 className="z-[2] text-[3rem] font-bold mt-11">Todo App</h1>
-        <div className="z-[2] flex flex-row items-center justify-center space-x-4 w-[95vw]">
+        <div className="z-[2] flex flex-row items-center justify-center space-x-4 w-[97vw]">
           <input value={input} onChange={(e) => setInput(e.target.value)} className="z-[2] p-3 border-[2px] rounded-[15px] bg-[#080F0D] outline-none" type="text" name="" id="" placeholder="What's on your mind ? "/>
           <button onClick={createTodo} className="z-[2] p-3 px-6 rounded-[10px] bg-[#40BDB2] opacity-[0.5] duration-500 hover:opacity-[1] hover:font-bold">Submit</button>
         </div>
